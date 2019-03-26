@@ -4,37 +4,51 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 1em;
   }
   
   .wrapper {
-    width: 430px;
-    margin: 0 auto;
+    width: 100%;
+    margin: auto;
     height: 100%;
-    padding-top: 0px;
   }
   
+  .wsLogo {
+    max-width: 7.5em;
+    height:auto;
+    margin: 2em 0em 2em 0em;
+  }
+
+  .wsMotion {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -100;
+  }
+
   #quiz {
-    background-color: #34495E;
+    background-color: rgba(0, 0, 0, 0);
     padding-bottom: 60px;
     width: 100%;
-    border-radius: 2%;
-    color: #fff;
+    color: white;
     text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
   
   #quiz > h1 {
     text-align: center;
-    padding-top: 25px;
+    padding: 0em 0em 1em 0em;
     font-size: 20px;
+    color: white;
   }
   
   .questions {
-    font-size: 28px;
+    font-size: 1.5em;
     font-weight: 700;
-    font-style: italic;
-    border-top: 1px solid #FFFFFF;
-    border-bottom: 1px solid #FFFFFF;
+    text-transform: uppercase;
+    border-top: 0.1em solid white;
+    border-bottom: 0.1em solid white;
     padding: 20px;
   }
   
@@ -45,7 +59,7 @@ body, html {
   
   .answers div:hover {
     cursor: pointer;
-    color: #42C0FB;
+    color: white;
   }
   
   .answers {
