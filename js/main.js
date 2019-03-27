@@ -100,7 +100,6 @@ window.onload = function () {
       }
     }
     
-    
     // Start the quiz right away
     loadQuestion(current);
     loadAnswers(current);
