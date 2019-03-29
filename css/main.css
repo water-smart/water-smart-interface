@@ -7,6 +7,20 @@ body, html {
     font-size: 1em;
     text-transform: uppercase;
   }
+
+.hereGoes {
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    width: 15em;
+    margin: 2em auto;
+    padding: 0.5em 0em 0.5em 0em;
+    background-color: white;
+    border-radius: 5em;
+    border-width: 0.25em;
+    border-color: white;
+    text-transform: uppercase; 
+  }
   
   .wrapper {
     width: 100%;
@@ -14,10 +28,16 @@ body, html {
     height: 100%;
   }
   
-  .wsLogo {
+  .wsLogoS {
     max-width: 7.5em;
-    height:auto;
+    height: auto;
     margin: 2em 0em 2em 0em;
+  }
+
+  .wsLogoL {
+    max-width: 15em;
+    height: auto;
+    margin: 10% 0 0 0;
   }
 
   .wsMotion {
@@ -75,21 +95,27 @@ body, html {
   
   .checker {
     display: inline-block;
-    width: 200px;
+    width: 20%;
     margin: 0 auto;
   }
   
   .correct, .false {
+    font-weight: 700;
     background-color: #109D59;
-    width: 60px;
-    height: 30px;
-    line-height: 30px;
-    padding-left: 4px;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    padding-left: 0em;
     float: left;
-    margin-left: 2px;
-    margin-top: 2px;
+    margin-left: 0.5em;
+    margin-top: 0.00em;
+    border-radius: 2em;
   }
   
   .false {
     background-color: #DC4437;
+  }
+
+  .questions, .answers, .checkAnswers, .checker, .wsLogoS {
+    display: none;
   }

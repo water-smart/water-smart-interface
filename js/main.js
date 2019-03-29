@@ -1,9 +1,20 @@
+
+function hereGoes(){ 
+  document.getElementById("questions").style.display = 'block';
+  document.getElementById("answers").style.display = 'block';
+  document.getElementById("checkAnswers").style.display = 'block';
+  document.getElementById("checker").style.display = 'block';
+  document.getElementById("hereGoes").style.display = 'none';
+  document.getElementById("wsLogoL").style.display = 'none';
+  document.getElementById("wsLogoS").style.display = 'inline-block';
+}
+
 window.onload = function () {
   
     var questionArea = document.getElementsByClassName('questions')[0],
-        answerArea   = document.getElementsByClassName('answers')[0],
-        checker      = document.getElementsByClassName('checker')[0],
-        current      = 0,
+        answerArea = document.getElementsByClassName('answers')[0],
+        checker = document.getElementsByClassName('checker')[0],
+        current = 0,
     
        // An object that holds all the questions + possible answers.
        // In the array --> last digit gives the right answer position
