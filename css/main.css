@@ -145,6 +145,9 @@ body, html {
     width: 20%;
     margin: 0 auto;
   }
+}
+
+/* @media screen and (min-width: 720px) {
   
   .correct, .false {
     font-weight: 700;
@@ -158,6 +161,14 @@ body, html {
     margin-top: 0.00em;
     border-radius: 2em;
   }
+  .middlemain {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+  } */
+}
+
+/* @media screen and (min-width: 960px) {
   
   .false {
     background-color: #DC4437;
