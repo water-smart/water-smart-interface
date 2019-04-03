@@ -1,14 +1,13 @@
-<html><head>
+<!DOCTYPE html>
+<html>
+<head>
   <meta charset="utf-8">
-  <title>INTERFACE</title>
-  <meta name="description" content="Water Smart">
-  <meta name="author" content="KA">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:700,900|Playfair+Display:400,400i,700,700i">
   <link rel="stylesheet" href="css/main.css">
   <script src="js/main.js" defer></script>
-
+  <title>Water Smart</title>
 </head>
 <body>
 
@@ -23,7 +22,21 @@
 
       <img src="img/wsLogo.png" alt="" class="wsLogoL" id="wsLogoL">
 
-      <button class="hereGoes" id="hereGoes" onclick="hereGoes()">Start</button>
+      <div class="startButton" id="startButton" onclick="startButton()">Start</div>
+    
+      <div class="scenarioScreen">
+
+        <p class="scenarioTitle" id="scenarioTitle">Scenario</p>
+
+        <p class="scenarioBody" id="scenarioBody">
+          Due to a recent drought, your off-grid house has a limited amount of water in its reserves.
+          <br><br>For each question you answer correctly, you will gain a point. 
+          <br><br>You will use the points you collect to decide which systems to distribute your water to, deciding your fate.
+        </p>
+
+        <div class="nextButton" id="nextButton" onclick="nextButton()">Next</div>
+      
+      </div>
       
       <p class="questions" id="questions">
         
@@ -36,8 +49,10 @@
       <div class="checkAnswers" id="checkAnswers">
         <div class="checker" id="checker">
 
+        </div>
       </div>
     </div>
   </div>
-</div>
-</body></html>
+
+</body>
+</html>

@@ -1,12 +1,21 @@
 
-function hereGoes(){ 
+function startButton(){ 
+  document.getElementById("startButton").style.display = 'none';
+  document.getElementById("wsLogoL").style.display = 'none';
+  document.getElementById("nextButton").style.display = 'block';
+  document.getElementById("scenarioTitle").style.display = 'block';
+  document.getElementById("scenarioBody").style.display = 'block';
+}
+
+function nextButton(){
+  document.getElementById("wsLogoS").style.display = 'inline-block';
   document.getElementById("questions").style.display = 'block';
   document.getElementById("answers").style.display = 'block';
   document.getElementById("checkAnswers").style.display = 'block';
   document.getElementById("checker").style.display = 'block';
-  document.getElementById("hereGoes").style.display = 'none';
-  document.getElementById("wsLogoL").style.display = 'none';
-  document.getElementById("wsLogoS").style.display = 'inline-block';
+  document.getElementById("nextButton").style.display = 'none';
+  document.getElementById("scenarioTitle").style.display = 'none';
+  document.getElementById("scenarioBody").style.display = 'none';
 }
 
 window.onload = function () {
@@ -31,92 +40,88 @@ window.onload = function () {
                   
           'What is the chemical composition of water?' : ['H2O', 'CO2', 'O2', 'H2O2', 0],
         };
-      
-  function loadQuestion(curr) {
-  // This function loads all the question into the questionArea
-  // It grabs the current question based on the 'current'-variable
-  
-    var question = Object.keys(allQuestions)[curr];
-    
-    questionArea.innerHTML = '';
-    questionArea.innerHTML = question;    
-  }
-  
-  function loadAnswers(curr) {
-  // This function loads all the possible answers of the given question
-  // It grabs the needed answer-array with the help of the current-variable
-  // Every answer is added with an 'onclick'-function
-  
-    var answers = allQuestions[Object.keys(allQuestions)[curr]];
-    
-    answerArea.innerHTML = '';
-    
-    for (var i = 0; i < answers.length -1; i += 1) {
-      var createDiv = document.createElement('div'),
-          text = document.createTextNode(answers[i]);
-      
-      createDiv.appendChild(text);      
-      createDiv.addEventListener("click", checkAnswer(i, answers));
-      
-      
-      answerArea.appendChild(createDiv);
-    }
-  }
-  
-  function checkAnswer(i, arr) {
-    // This is the function that will run, when clicked on one of the answers
-    // Check if givenAnswer is sams as the correct one
-    // After this, check if it's the last question:
-    // If it is: empty the answerArea and let them know it's done.
-    
-    return function () {
-      var givenAnswer = i,
-          correctAnswer = arr[arr.length-1];
-          wrapperArea  = document.getElementsByClassName('wrapper')[0];
-      
-      if (givenAnswer === correctAnswer) {
-        addChecker(true);             
-      } else {
-        addChecker(false);                        
-      }
-      
-      if (current < Object.keys(allQuestions).length -1) {
-        current += 1;
         
-        loadQuestion(current);
-        loadAnswers(current);
-      } else {
-        questionArea.innerHTML = 'Done';
-        answerArea.innerHTML = '';
-   // below triggers screen to disappear instead of say 'Done'     
-        wrapperArea.innerHTML = '';
-
-      }
-                              
-    };
-  }
-  
-  function addChecker(bool) {
-  // This function adds a div element to the page
-  // Used to see if it was correct or false
-  
-    var createDiv = document.createElement('div'),
-        txt       = document.createTextNode(current + 1);
+    function loadQuestion(curr) {
+    // This function loads all the question into the questionArea
+    // It grabs the current question based on the 'current'-variable
     
-    createDiv.appendChild(txt);
-    
-    if (bool) {
+      var question = Object.keys(allQuestions)[curr];
       
-      createDiv.className += 'correct';
-      checker.appendChild(createDiv);
-    } else {
-      createDiv.className += 'false';
-      checker.appendChild(createDiv);
+      questionArea.innerHTML = '';
+      questionArea.innerHTML = question;    
     }
-  }
-  
-  // Start the quiz right away
-  loadQuestion(current);
-  loadAnswers(current);
-  
-};
+    
+    function loadAnswers(curr) {
+    // This function loads all the possible answers of the given question
+    // It grabs the needed answer-array with the help of the current-variable
+    // Every answer is added with an 'onclick'-function
+    
+      var answers = allQuestions[Object.keys(allQuestions)[curr]];
+      
+      answerArea.innerHTML = '';
+      
+      for (var i = 0; i < answers.length -1; i += 1) {
+        var createDiv = document.createElement('div'),
+            text = document.createTextNode(answers[i]);
+        
+        createDiv.appendChild(text);      
+        createDiv.addEventListener("click", checkAnswer(i, answers));
+        
+        
+        answerArea.appendChild(createDiv);
+      }
+    }
+    
+    function checkAnswer(i, arr) {
+      // This is the function that will run, when clicked on one of the answers
+      // Check if givenAnswer is sams as the correct one
+      // After this, check if it's the last question:
+      // If it is: empty the answerArea and let them know it's done.
+      
+      return function () {
+        var givenAnswer = i,
+            correctAnswer = arr[arr.length-1];
+        
+        if (givenAnswer === correctAnswer) {
+          addChecker(true);             
+        } else {
+          addChecker(false);                        
+        }
+        
+        if (current < Object.keys(allQuestions).length -1) {
+          current += 1;
+          
+          loadQuestion(current);
+          loadAnswers(current);
+        } else {
+          questionArea.innerHTML = 'Done';
+          answerArea.innerHTML = '';
+        }
+                                
+      };
+    }
+    
+    function addChecker(bool) {
+    // This function adds a div element to the page
+    // Used to see if it was correct or false
+    
+      var createDiv = document.createElement('div'),
+          txt       = document.createTextNode(current + 1);
+      
+      createDiv.appendChild(txt);
+      
+      if (bool) {
+        
+        createDiv.className += 'correct';
+        checker.appendChild(createDiv);
+      } else {
+        createDiv.className += 'false';
+        checker.appendChild(createDiv);
+      }
+    }
+    
+    // Start the quiz right away
+    loadQuestion(current);
+    loadAnswers(current);
+    
+  };
