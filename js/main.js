@@ -31,17 +31,6 @@ window.onload = function () {
                   
           'What is the chemical composition of water?' : ['H2O', 'CO2', 'O2', 'H2O2', 0],
         };
-        
-        'How much water does the average Canadian use per day?' : ['329L', '500L' , '238L', '1239L', 0],
-                
-        'Which fruit or vegetable requires the most water to produce?' : ['Blueberries', 'Olives', 'Mangos', 'Corn', 1],
-        
-        'How long can a human survive without water?' : ['14 days', '6 days', '3 days', '1 day', 2],
-        
-        'How many cups of water do you need to make a box of Kraft Dinner?' : ['6 cups', '3 cups' , '1.5 cups', '8 cups', 0],
-                
-        'What is the chemical composition of water?' : ['H2O', 'CO2', 'O2', 'H2O2', 0],
-      };
       
   function loadQuestion(curr) {
   // This function loads all the question into the questionArea
