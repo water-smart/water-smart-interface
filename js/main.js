@@ -1,21 +1,12 @@
 
-function startButton(){ 
-  document.getElementById("startButton").style.display = 'none';
-  document.getElementById("wsLogoL").style.display = 'none';
-  document.getElementById("nextButton").style.display = 'block';
-  document.getElementById("scenarioTitle").style.display = 'block';
-  document.getElementById("scenarioBody").style.display = 'block';
-}
-
-function nextButton(){
-  document.getElementById("wsLogoS").style.display = 'inline-block';
+function hereGoes(){ 
   document.getElementById("questions").style.display = 'block';
   document.getElementById("answers").style.display = 'block';
   document.getElementById("checkAnswers").style.display = 'block';
   document.getElementById("checker").style.display = 'block';
-  document.getElementById("nextButton").style.display = 'none';
-  document.getElementById("scenarioTitle").style.display = 'none';
-  document.getElementById("scenarioBody").style.display = 'none';
+  document.getElementById("hereGoes").style.display = 'none';
+  document.getElementById("wsLogoL").style.display = 'none';
+  document.getElementById("wsLogoS").style.display = 'inline-block';
 }
 
 window.onload = function () {
