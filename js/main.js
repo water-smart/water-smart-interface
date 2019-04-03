@@ -16,6 +16,8 @@ function nextButton(){
   document.getElementById("nextButton").style.display = 'none';
   document.getElementById("scenarioTitle").style.display = 'none';
   document.getElementById("scenarioBody").style.display = 'none';
+  document.getElementById("quiz").style.display = 'none';
+  document.getElementById("middlemain").style.display = 'grid';
 }
 
 window.onload = function () {
