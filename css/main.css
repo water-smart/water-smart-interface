@@ -25,7 +25,7 @@ body, html {
 
 .startButton:hover {
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #3FA9F5;
   transition:.10s ease-in;
 }
 
@@ -46,7 +46,7 @@ body, html {
 
 .nextButton:hover {
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #3FA9F5;
   transition:.10s ease-in;
 }
 
@@ -70,7 +70,7 @@ padding: 0.75em;
 
 .wrapper {
   width: 100%;
-  margin: auto;
+  margin: 25vh auto;
   height: 100%;
 }
 
@@ -120,7 +120,7 @@ padding: 0.75em;
 
 .answers div:hover {
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: #3FA9F5;
   transition:.10s ease-in;
 }
 
@@ -148,7 +148,7 @@ padding: 0.75em;
 
 .correct, .false {
   font-weight: 700;
-  background-color: #109D59;
+  background-color: #3FA9F5;
   width: 2em;
   height: 2em;
   line-height: 2em;
@@ -167,13 +167,13 @@ padding: 0.75em;
   display: none;
 }
 
-.middlemain video {
+.sequence video {
   width: 100%;
   height: 100%;
 }
 
-.middlemain {
-  display: none;
+.sequence {
+  display: inline-block;
   grid-template-columns: 1fr 1fr 1fr;
   position: fixed;
   top: 0;
