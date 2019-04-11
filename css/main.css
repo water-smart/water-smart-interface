@@ -167,6 +167,38 @@ padding: 0.75em;
   display: none;
 }
 
+.icons {
+  max-width: 6em;
+  position: fixed;
+  display: grid:
+  grid-template-coloums: 1fr 1fr 1fr;
+  /* z-index: 1; */
+}
+
+.drink {
+
+}
+
+.wash {
+
+}
+
+.shower {
+
+}
+
+.water {
+
+}
+
+.feed {
+
+}
+
+.flush {
+
+}
+
 .sequence video {
   width: 100%;
   height: 100%;

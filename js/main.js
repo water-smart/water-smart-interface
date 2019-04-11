@@ -165,11 +165,13 @@ window.onload = function () {
           loadQuestion(current);
           loadAnswers(current);
         } else {
-          questionArea.innerHTML = 'Done';
+          // questionArea.innerHTML = 'Done';
           answerArea.innerHTML = '';
     // below triggers screen to disappear instead of say 'Done'     
           // wrapperArea.innerHTML = '';
+          document.getElementById("questions").style.display = 'none';
           document.getElementById("sequence").style.display = 'grid';
+          document.getElementById("icons").style.display = 'grid';
           document.getElementById("wrapper").style.display = 'none';
 
         }
