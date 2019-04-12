@@ -1,15 +1,18 @@
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width" initial-scale="1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/main.js" defer=""></script>
-  <title>Apr5 Water Smart</title>
-</head>
-<body>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js" defer=""></script>
+    <title>Apr12 Water Smart</title>
+  </head>
+  
+  <body>
 
+  <!-- Quiz section (working) Jack -->
     <div class="wrapper">
         <video autoplay muted loop class="wsMotion" id=wsMotion><source src="vid/wsMotionS.mp4" type="video/mp4"></video>
         <div id="quiz">
@@ -34,14 +37,168 @@
         </div>
       </div>
     
-  <div class="sequence" id="sequence">
-    <div class="vidDrink"><div class="overlap"><p>DRINKING WATER<br><br>Choosing this resource will grant you<br> access to potable water.</p></div><video onclick="this.play()"><source src="img/drink.mp4" type="video/mp4" onclick=""></video></div> 
-    <div class="vidClothes"><div class="overlap"><p>WASHING MACHINE<br><br>Choosing this resource will grant you the<br> ability to clean clothes.</p></div><video onclick="this.play()"><source src="img/clothes.mp4" type="video/mp4" onclick=""></video></div>
-    <div class="vidShower"><div class="overlap"><p>SHOWER<br><br>Choosing this resource will grant you improved<br> hygiene.</p></div><video onclick="this.play()"><source src="img/shower.mp4" type="video/mp4" onclick=""></video></div>
-    <div class="vidVeg"><div class="overlap"><p>VEGETATION<br><br>Choosing this resource will grant you the<br> ability to grow vegetables.</p></div><video onclick="this.play()"><source src="img/vegetation.mp4" type="video/mp4" onclick=""></video></div> 
-    <div class="vidStock"><div class="overlap"><p>LIVESTOCK<br><br>Choosing this resource will grant you the<br> ability to farm livestock.</p></div><video onclick="this.play()"><source src="img/livestock.mp4" type="video/mp4" onclick=""></video></div> 
-    <div class="vidToilet"><div class="overlap"><p>TOILET<br><br>Choosing this resource will grant you<br> access to the plumbing system</p></div><video onclick="this.play()"><source src="img/toilet.mp4" type="video/mp4" onclick=""></video></div> 
-  </div>
+  <!-- Video section (working) Kyle  -->
+      <div class="sequence" id="sequence">
+        <div><video class="firstVideo" onclick="playPauseMedia1()"><source src="img/drink.mp4" type="video/mp4" onclick="play(this)"></video></div> 
+        <div><video class="secondVideo" onclick="playPauseMedia2()"><source src="img/clothes.mp4" type="video/mp4" onclick=""></video></div>
+        <div><video class="thirdVideo" onclick="playPauseMedia3()"><source src="img/shower.mp4" type="video/mp4" onclick=""></video></div> 
+        <div><video class="fourthVideo" onclick="playPauseMedia4()"><source src="img/vegetation.mp4" type="video/mp4" onclick=""></video></div>
+        <div><video class="fifthVideo" onclick="playPauseMedia5()"><source src="img/livestock.mp4" type="video/mp4" onclick=""></video></div> 
+        <div><video class="sixthVideo" onclick="playPauseMedia6()"><source src="img/toilet.mp4" type="video/mp4" onclick=""></video></div>
+      </div>
+    
+  <!-- Hover info (videos not toggling commented out for now, work in progress..) Jack -->
+      <!-- <div class="firstVideo" onclick="playPauseMedia1()"><div class="overlap"><p>DRINKING WATER<br><br>Choosing this resource will grant you<br> access to potable water.</p></div><video onclick=""><source src="img/drink.mp4" type="video/mp4" onclick=""></video></div>  -->
+      <!-- <div class="secondVideo" onclick="playPauseMedia2()"><div class="overlap"><p>WASHING MACHINE<br><br>Choosing this resource will grant you the<br> ability to clean clothes.</p></div><video onclick=""><source src="img/clothes.mp4" type="video/mp4" onclick=""></video></div> -->
+      <!-- <div class="thirdVideo" onclick="playPauseMedia3()"><div class="overlap"><p>SHOWER<br><br>Choosing this resource will grant you improved<br> hygiene.</p></div><video onclick=""><source src="img/shower.mp4" type="video/mp4" onclick=""></video></div> -->
+      <!-- <div class="fourthVideo" onclick="playPauseMedia4()"><div class="overlap"><p>VEGETATION<br><br>Choosing this resource will grant you the<br> ability to grow vegetables.</p></div><video onclick=""><source src="img/vegetation.mp4" type="video/mp4" onclick=""></video></div>  -->
+      <!-- <div class="fifthVideo" onclick="playPauseMedia5()"><div class="overlap"><p>LIVESTOCK<br><br>Choosing this resource will grant you the<br> ability to farm livestock.</p></div><video onclick=""><source src="img/livestock.mp4" type="video/mp4" onclick=""></video></div>  -->
+      <!-- <div class="sixthVideo" onclick="playPauseMedia6()"><div class="overlap"><p>TOILET<br><br>Choosing this resource will grant you<br> access to the plumbing system</p></div><video onclick=""><source src="img/toilet.mp4" type="video/mp4" onclick=""></video></div>  -->
+    
+  <!-- Toggle video icons (working) Kyle -->
+    <div class="icons" id="icons">
+      <div><img src="img/drink.png" alt="" class="drink" id="drink" onhover="" onclick="playPauseMedia1()"></div>
+      <div><img src="img/wash.png" alt="" class="wash" id="" onclick="playPauseMedia2()"></div>
+      <div><img src="img/shower.png" alt="" class="shower" id="" onclick="playPauseMedia3()"></div>
+      <div><img src="img/water.png" alt="" class="water" id="" onclick="playPauseMedia4()"></div>
+      <div><img src="img/feed.png" alt="" class="feed" id="" onclick="playPauseMedia5()"></div>
+      <div><img src="img/flush.png" alt="" class="flush" id="" onclick="playPauseMedia6()"></div>
+    </div>    
+    
+  <!-- Icon hover (work in progress) Kyle -->
+    <div class="hover" id="hover"> 
+      <div><img src="img/drinkH.png" alt="" class="drink" id="drink" onclick="playPauseMedia1()"></div>
+      <div><img src="img/washH.png" alt="" class="wash" id="" onclick="playPauseMedia2()"></div>
+      <div><img src="img/showerH.png" alt="" class="shower" id="" onclick="playPauseMedia3()"></div>
+      <div><img src="img/waterH.png" alt="" class="water" id="" onclick="playPauseMedia4()"></div>
+      <div><img src="img/feedH.png" alt="" class="feed" id="" onclick="playPauseMedia5()"></div>
+      <div><img src="img/flushH.png" alt="" class="flush" id="" onclick="playPauseMedia6()"></div>
+    </div>    
 
-</body>
+  <!-- Javascript that determines the max number of clicks based on score (working) Kyle -->
+    <script>
+
+        //extract each video within the sequence class and assign it to a variable in order to play it
+        var video1 = document.getElementById("sequence").querySelectorAll(".firstVideo");
+        var video2 = document.getElementById("sequence").querySelectorAll(".secondVideo");
+        var video3 = document.getElementById("sequence").querySelectorAll(".thirdVideo");
+        var video4 = document.getElementById("sequence").querySelectorAll(".fourthVideo");
+        var video5 = document.getElementById("sequence").querySelectorAll(".fifthVideo");
+        var video6 = document.getElementById("sequence").querySelectorAll(".sixthVideo");
+        
+        
+        var count=0;
+        
+        //plays first video if the user has enough credits
+        
+          function playPauseMedia1(){
+          
+            if (count<score) {
+              
+              // alert(video1[0]);
+              video1[0].play();
+              // alert("video has been played");
+              count++; 
+            } else {
+              // videos.pause;
+              // alert("video won't play");
+            }
+        
+          }
+        
+        //plays second video if the user has enough credits
+        
+          function playPauseMedia2(){
+          
+            if (count<score) {
+              
+              // alert(video1[0]);
+              video2[0].play();
+              // alert("video has been played");
+              count++; 
+            } else {
+              // videos.pause;
+              // alert("video won't play");
+            }
+        
+        
+        }
+        
+        //plays third video if the user has enough credits
+        
+        function playPauseMedia3(){
+          
+          if (count<score) {
+            
+            // alert(video1[0]);
+            video3[0].play();
+            // alert("video has been played");
+            count++; 
+          } else {
+            // videos.pause;
+            // alert("video won't play");
+          }
+        
+        
+        }
+        
+        
+        //plays fourth video if the user has enough credits
+        
+        function playPauseMedia4(){
+          
+          if (count<score) {
+            
+            // alert(video1[0]);
+            video4[0].play();
+            // alert("video has been played");
+            count++; 
+          } else {
+            // videos.pause;
+            // alert("video won't play");
+          }
+        
+        
+        }
+        
+        //plays fifth video if the user has enough credits
+        
+        function playPauseMedia5(){
+          
+          if (count<score) {
+            
+            // alert(video1[0]);
+            video5[0].play();
+            // alert("video has been played");
+            count++; 
+          } else {
+            // videos.pause;
+            // alert("video won't play");
+          }
+        
+        
+        }
+        
+        //plays sixth video if the user has enough credits
+        
+        function playPauseMedia6(){
+          
+          if (count<score) {
+            
+            // alert(video1[0]);
+            video6[0].play();
+            // alert("video has been played");
+            count++; 
+          } else {
+            // videos.pause;
+            // alert("video won't play");
+          }
+        
+        
+        }
+        
+    </script>
+    
+  </body>
+
 </html>

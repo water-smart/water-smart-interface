@@ -1,10 +1,15 @@
 
+
+
 function startButton(){ 
   document.getElementById("startButton").style.display = 'none';
+  document.getElementById("wsLogoS").style.display = 'inline-block';
   document.getElementById("wsLogoL").style.display = 'none';
   document.getElementById("nextButton").style.display = 'block';
   document.getElementById("scenarioTitle").style.display = 'block';
   document.getElementById("scenarioBody").style.display = 'block';
+
+
   // audio toggle
 
 }
@@ -21,7 +26,7 @@ function nextButton(){
   // document.getElementById("quiz").style.display = 'none';
   // document.getElementById("sequence").style.display = 'grid';
 }
-//SOUND Start
+//Sounds (Michael)
 let listSound = [
   "3 beep high", // 0
   "3 beep low", // 1
@@ -39,7 +44,7 @@ let listSound = [
   "Synth stab", // 13
   "String stab", // 14
   "robot up", // 15
-  "robot down", // 16
+  "robot down", // 16 
   "robot spam", // 17
   "Loser", // 18
   "Loser slow", // 19
@@ -50,11 +55,13 @@ let listSound = [
   "4 robot signals", // 24
   "3 String stabs" // 25
 
-
 ];
+
+
 document.querySelector('#startButton').addEventListener('click',startSound);
 //Next sound below
 document.querySelector('#nextButton').addEventListener('click',nextSound);
+// var videos = document.querySelectorAll('video');
 
 
 
@@ -72,12 +79,23 @@ function nextSound(){
 }
 //SOUND End
 
+
+ //initialize the score for correct answers
+ var score =0;
+
+
+
 window.onload = function () {
   
-    var questionArea = document.getElementsByClassName('questions')[0],
+
+
+  document.getElementById("sequence").style.display = 'none';
+  document.getElementById("icons").style.display = 'none';
+
+  var questionArea = document.getElementsByClassName('questions')[0],
         answerArea = document.getElementsByClassName('answers')[0],
-        checker = document.getElementsByClassName('checker')[0],
-        current = 0,
+        checker    = document.getElementsByClassName('checker')[0],
+        current    = 0,
     
        // An object that holds all the questions + possible answers.
        // In the array --> last digit gives the right answer position
@@ -94,7 +112,7 @@ window.onload = function () {
                   
           'What is the chemical composition of water?' : ['H2O', 'CO2', 'O2', 'H2O2', 0],
         };
-        
+         
     function loadQuestion(curr) {
     // This function loads all the question into the questionArea
     // It grabs the current question based on the 'current'-variable
@@ -104,7 +122,7 @@ window.onload = function () {
       questionArea.innerHTML = '';
       questionArea.innerHTML = question;    
       document.getElementById("sequence").style.display = 'none';
-      document.getElementById("checker").style.display = 'none';
+      // document.getElementById("checker").style.display = 'none';
 
     }
     
@@ -135,8 +153,8 @@ window.onload = function () {
       // Check if givenAnswer is sams as the correct one
       // After this, check if it's the last question:
       // If it is: empty the answerArea and let them know it's done.
-
       
+
       return function () {
         var givenAnswer = i,
             correctAnswer = arr[arr.length-1];
@@ -145,8 +163,10 @@ window.onload = function () {
             //  wrapperArea  = document.getElementsByClassName('wrapper')[0];
 
         if (givenAnswer === correctAnswer) {
-          addChecker(true);             
-         // window.alert("wrong");
+          addChecker(true); 
+          score++;
+          // alert(score);           
+         
           let track = new Audio();
           track.src = "sound/" +listSound[21] + ".wav";
           track.paused ? track.play() : track.pause();
@@ -165,13 +185,18 @@ window.onload = function () {
           loadQuestion(current);
           loadAnswers(current);
         } else {
-          questionArea.innerHTML = 'Done';
+          // questionArea.innerHTML = 'Done';
+          document.getElementById("wsLogoS").style.display = 'none';
+          document.getElementById("questions").style.display = 'none';
+
           answerArea.innerHTML = '';
+          checker.innerHTML = '';
     // below triggers screen to disappear instead of say 'Done'     
           // wrapperArea.innerHTML = '';
           document.getElementById("sequence").style.display = 'grid';
-          document.getElementById("wrapper").style.display = 'none';
+          document.getElementById("icons").style.display = 'grid';
 
+          // document.getElementById("wrapper").style.display = 'none';
         }
                                 
       };
@@ -199,5 +224,10 @@ window.onload = function () {
     // Start the quiz right away
     loadQuestion(current);
     loadAnswers(current);
+
+    // play.addEventListener('click', playPauseMedia);
+   
     
   };
+ 
+ 
