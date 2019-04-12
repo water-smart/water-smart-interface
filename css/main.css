@@ -168,6 +168,7 @@ padding: 0.75em;
   height: 100%;
 }
 
+
 .sequence {
   display: grid;
   grid-template-columns: 33.3333% 33.3333% 33.3333%;
@@ -195,7 +196,7 @@ padding: 0.75em;
   place-content: center;
   display: grid;
   width: 90%;
-  height: 90%;
+  height: 45%;
   top: 5%;
   left: 5%;
   background-color: rgba(0, 0, 0, 0.75);
